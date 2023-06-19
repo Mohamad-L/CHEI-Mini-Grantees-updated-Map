@@ -32,37 +32,34 @@
         <script src="js/labels.js"></script>
         <script src="data/MAMunicipalitiesOutline_1.js"></script>
         <script src="data/MAOutline_2.js"></script>
-        <script src="data/VolunteersinMedicine_3.js"></script>
-        <script src="data/VietAID_4.js"></script>
-        <script src="data/TransformationalPrisonProject_5.js"></script>
-        <script src="data/TapestryHealth_6.js"></script>
-        <script src="data/SomaliParentsAdvocacyCenterforEducation_7.js"></script>
-        <script src="data/QARI_8.js"></script>
-        <script src="data/OuterCapeHealthServices_9.js"></script>
-        <script src="data/NewAmericanAssociationofMassachusetts_10.js"></script>
-        <script src="data/MulticulturalAIDsCoalition_11.js"></script>
-        <script src="data/MassachusettsAllianceofPortugueseSpeakers_12.js"></script>
-        <script src="data/LifePath_13.js"></script>
-        <script src="data/LGBTAsylumTaskForce_14.js"></script>
-        <script src="data/LatinoPublicInstitute_15.js"></script>
-        <script src="data/LaColaborativa_16.js"></script>
-        <script src="data/JusticeResourceInstitute_17.js"></script>
-        <script src="data/IslamicSocietyofBostonISBCC_18.js"></script>
-        <script src="data/ImmigrantsAssistanceCenterInc_19.js"></script>
-        <script src="data/FederationforChildrenwithSpecialNeeds_20.js"></script>
-        <script src="data/FatherBillsMainSpring_21.js"></script>
-        <script src="data/FamilyTIESofMA_22.js"></script>
-        <script src="data/FamilyServicesofMerrimackValley_23.js"></script>
-        <script src="data/EverettHaitianCommunityCenter_24.js"></script>
-        <script src="data/EnlacedeFamilias_25.js"></script>
-        <script src="data/DisabilityPolicyConsortium_26.js"></script>
-        <script src="data/DEAFInc_27.js"></script>
-        <script src="data/CentralMassachussettsAgencyonAging_28.js"></script>
-        <script src="data/CenterforArabicCulture_29.js"></script>
-        <script src="data/CambodianMutualAssistanceAssociation_30.js"></script>
-        <script src="data/BostonChinatownNeighborhoodCenter_31.js"></script>
-        <script src="data/AuthenticCarribeanFoundation_32.js"></script>
-        <script src="data/Mass4HFoundation_33.js"></script>
+        <script src="data/TransformationalPrisonProject_3.js"></script>
+        <script src="data/CentralMassachussettsAgencyonAging_4.js"></script>
+        <script src="data/CambodianMutualAssistanceAssociation_5.js"></script>
+        <script src="data/MulticulturalAIDsCoalition_6.js"></script>
+        <script src="data/NewAmericanAssociationofMassachusetts_7.js"></script>
+        <script src="data/LaColaborativa_8.js"></script>
+        <script src="data/TapestryHealth_9.js"></script>
+        <script src="data/FatherBillsMainSpring_10.js"></script>
+        <script src="data/OuterCapeHealthServices_11.js"></script>
+        <script src="data/FamilyServicesofMerrimackValley_12.js"></script>
+        <script src="data/VolunteersinMedicine_13.js"></script>
+        <script src="data/VietAID_14.js"></script>
+        <script src="data/QARI_15.js"></script>
+        <script src="data/ImmigrantsAssistanceCenterInc_16.js"></script>
+        <script src="data/EverettHaitianCommunityCenter_17.js"></script>
+        <script src="data/FederationforChildrenwithSpecialNeeds_18.js"></script>
+        <script src="data/EnlacedeFamilias_19.js"></script>
+        <script src="data/LifePath_20.js"></script>
+        <script src="data/DEAFInc_21.js"></script>
+        <script src="data/SomaliParentsAdvocacyCenterforEducation_22.js"></script>
+        <script src="data/IslamicSocietyofBostonISBCC_23.js"></script>
+        <script src="data/LatinoPublicInstitute_24.js"></script>
+        <script src="data/CenterforArabicCulture_25.js"></script>
+        <script src="data/BostonChinatownNeighborhoodCenter_26.js"></script>
+        <script src="data/AuthenticCarribeanFoundation_27.js"></script>
+        <script src="data/JusticeResourceInstitute_28.js"></script>
+        <script src="data/Mass4HFoundation_29.js"></script>
+        <script src="data/CommunitysofFocus_30.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -78,7 +75,6 @@
                 fillOpacity: 1
               });
             }
-            highlightLayer.openPopup();
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
@@ -110,13 +106,6 @@
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -177,13 +166,6 @@
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
                 },
                 mouseover: highlightFeature,
             });
@@ -243,18 +225,11 @@
         });
         bounds_group.addLayer(layer_MAOutline_2);
         map.addLayer(layer_MAOutline_2);
-        function pop_VolunteersinMedicine_3(feature, layer) {
+        function pop_TransformationalPrisonProject_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -272,9 +247,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_VolunteersinMedicine_3_0() {
+        function style_TransformationalPrisonProject_3_0() {
             return {
-                pane: 'pane_VolunteersinMedicine_3',
+                pane: 'pane_TransformationalPrisonProject_3',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -283,35 +258,28 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(164,113,88,1.0)',
+                fillColor: 'rgba(255,1,149,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_VolunteersinMedicine_3');
-        map.getPane('pane_VolunteersinMedicine_3').style.zIndex = 403;
-        map.getPane('pane_VolunteersinMedicine_3').style['mix-blend-mode'] = 'normal';
-        var layer_VolunteersinMedicine_3 = new L.geoJson(json_VolunteersinMedicine_3, {
+        map.createPane('pane_TransformationalPrisonProject_3');
+        map.getPane('pane_TransformationalPrisonProject_3').style.zIndex = 403;
+        map.getPane('pane_TransformationalPrisonProject_3').style['mix-blend-mode'] = 'normal';
+        var layer_TransformationalPrisonProject_3 = new L.geoJson(json_TransformationalPrisonProject_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_VolunteersinMedicine_3',
-            layerName: 'layer_VolunteersinMedicine_3',
-            pane: 'pane_VolunteersinMedicine_3',
-            onEachFeature: pop_VolunteersinMedicine_3,
-            style: style_VolunteersinMedicine_3_0,
+            dataVar: 'json_TransformationalPrisonProject_3',
+            layerName: 'layer_TransformationalPrisonProject_3',
+            pane: 'pane_TransformationalPrisonProject_3',
+            onEachFeature: pop_TransformationalPrisonProject_3,
+            style: style_TransformationalPrisonProject_3_0,
         });
-        bounds_group.addLayer(layer_VolunteersinMedicine_3);
-        function pop_VietAID_4(feature, layer) {
+        bounds_group.addLayer(layer_TransformationalPrisonProject_3);
+        function pop_CentralMassachussettsAgencyonAging_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -329,9 +297,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_VietAID_4_0() {
+        function style_CentralMassachussettsAgencyonAging_4_0() {
             return {
-                pane: 'pane_VietAID_4',
+                pane: 'pane_CentralMassachussettsAgencyonAging_4',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -340,35 +308,28 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(243,166,178,1.0)',
+                fillColor: 'rgba(0,226,211,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_VietAID_4');
-        map.getPane('pane_VietAID_4').style.zIndex = 404;
-        map.getPane('pane_VietAID_4').style['mix-blend-mode'] = 'normal';
-        var layer_VietAID_4 = new L.geoJson(json_VietAID_4, {
+        map.createPane('pane_CentralMassachussettsAgencyonAging_4');
+        map.getPane('pane_CentralMassachussettsAgencyonAging_4').style.zIndex = 404;
+        map.getPane('pane_CentralMassachussettsAgencyonAging_4').style['mix-blend-mode'] = 'normal';
+        var layer_CentralMassachussettsAgencyonAging_4 = new L.geoJson(json_CentralMassachussettsAgencyonAging_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_VietAID_4',
-            layerName: 'layer_VietAID_4',
-            pane: 'pane_VietAID_4',
-            onEachFeature: pop_VietAID_4,
-            style: style_VietAID_4_0,
+            dataVar: 'json_CentralMassachussettsAgencyonAging_4',
+            layerName: 'layer_CentralMassachussettsAgencyonAging_4',
+            pane: 'pane_CentralMassachussettsAgencyonAging_4',
+            onEachFeature: pop_CentralMassachussettsAgencyonAging_4,
+            style: style_CentralMassachussettsAgencyonAging_4_0,
         });
-        bounds_group.addLayer(layer_VietAID_4);
-        function pop_TransformationalPrisonProject_5(feature, layer) {
+        bounds_group.addLayer(layer_CentralMassachussettsAgencyonAging_4);
+        function pop_CambodianMutualAssistanceAssociation_5(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -386,9 +347,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_TransformationalPrisonProject_5_0() {
+        function style_CambodianMutualAssistanceAssociation_5_0() {
             return {
-                pane: 'pane_TransformationalPrisonProject_5',
+                pane: 'pane_CambodianMutualAssistanceAssociation_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -397,35 +358,28 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(133,182,111,1.0)',
+                fillColor: 'rgba(200,1,255,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_TransformationalPrisonProject_5');
-        map.getPane('pane_TransformationalPrisonProject_5').style.zIndex = 405;
-        map.getPane('pane_TransformationalPrisonProject_5').style['mix-blend-mode'] = 'normal';
-        var layer_TransformationalPrisonProject_5 = new L.geoJson(json_TransformationalPrisonProject_5, {
+        map.createPane('pane_CambodianMutualAssistanceAssociation_5');
+        map.getPane('pane_CambodianMutualAssistanceAssociation_5').style.zIndex = 405;
+        map.getPane('pane_CambodianMutualAssistanceAssociation_5').style['mix-blend-mode'] = 'normal';
+        var layer_CambodianMutualAssistanceAssociation_5 = new L.geoJson(json_CambodianMutualAssistanceAssociation_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_TransformationalPrisonProject_5',
-            layerName: 'layer_TransformationalPrisonProject_5',
-            pane: 'pane_TransformationalPrisonProject_5',
-            onEachFeature: pop_TransformationalPrisonProject_5,
-            style: style_TransformationalPrisonProject_5_0,
+            dataVar: 'json_CambodianMutualAssistanceAssociation_5',
+            layerName: 'layer_CambodianMutualAssistanceAssociation_5',
+            pane: 'pane_CambodianMutualAssistanceAssociation_5',
+            onEachFeature: pop_CambodianMutualAssistanceAssociation_5,
+            style: style_CambodianMutualAssistanceAssociation_5_0,
         });
-        bounds_group.addLayer(layer_TransformationalPrisonProject_5);
-        function pop_TapestryHealth_6(feature, layer) {
+        bounds_group.addLayer(layer_CambodianMutualAssistanceAssociation_5);
+        function pop_MulticulturalAIDsCoalition_6(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -443,9 +397,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_TapestryHealth_6_0() {
+        function style_MulticulturalAIDsCoalition_6_0() {
             return {
-                pane: 'pane_TapestryHealth_6',
+                pane: 'pane_MulticulturalAIDsCoalition_6',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -454,35 +408,28 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(231,113,72,1.0)',
+                fillColor: 'rgba(0,165,254,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_TapestryHealth_6');
-        map.getPane('pane_TapestryHealth_6').style.zIndex = 406;
-        map.getPane('pane_TapestryHealth_6').style['mix-blend-mode'] = 'normal';
-        var layer_TapestryHealth_6 = new L.geoJson(json_TapestryHealth_6, {
+        map.createPane('pane_MulticulturalAIDsCoalition_6');
+        map.getPane('pane_MulticulturalAIDsCoalition_6').style.zIndex = 406;
+        map.getPane('pane_MulticulturalAIDsCoalition_6').style['mix-blend-mode'] = 'normal';
+        var layer_MulticulturalAIDsCoalition_6 = new L.geoJson(json_MulticulturalAIDsCoalition_6, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_TapestryHealth_6',
-            layerName: 'layer_TapestryHealth_6',
-            pane: 'pane_TapestryHealth_6',
-            onEachFeature: pop_TapestryHealth_6,
-            style: style_TapestryHealth_6_0,
+            dataVar: 'json_MulticulturalAIDsCoalition_6',
+            layerName: 'layer_MulticulturalAIDsCoalition_6',
+            pane: 'pane_MulticulturalAIDsCoalition_6',
+            onEachFeature: pop_MulticulturalAIDsCoalition_6,
+            style: style_MulticulturalAIDsCoalition_6_0,
         });
-        bounds_group.addLayer(layer_TapestryHealth_6);
-        function pop_SomaliParentsAdvocacyCenterforEducation_7(feature, layer) {
+        bounds_group.addLayer(layer_MulticulturalAIDsCoalition_6);
+        function pop_NewAmericanAssociationofMassachusetts_7(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -500,9 +447,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_SomaliParentsAdvocacyCenterforEducation_7_0() {
+        function style_NewAmericanAssociationofMassachusetts_7_0() {
             return {
-                pane: 'pane_SomaliParentsAdvocacyCenterforEducation_7',
+                pane: 'pane_NewAmericanAssociationofMassachusetts_7',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -511,35 +458,28 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,158,23,1.0)',
+                fillColor: 'rgba(0,96,11,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_SomaliParentsAdvocacyCenterforEducation_7');
-        map.getPane('pane_SomaliParentsAdvocacyCenterforEducation_7').style.zIndex = 407;
-        map.getPane('pane_SomaliParentsAdvocacyCenterforEducation_7').style['mix-blend-mode'] = 'normal';
-        var layer_SomaliParentsAdvocacyCenterforEducation_7 = new L.geoJson(json_SomaliParentsAdvocacyCenterforEducation_7, {
+        map.createPane('pane_NewAmericanAssociationofMassachusetts_7');
+        map.getPane('pane_NewAmericanAssociationofMassachusetts_7').style.zIndex = 407;
+        map.getPane('pane_NewAmericanAssociationofMassachusetts_7').style['mix-blend-mode'] = 'normal';
+        var layer_NewAmericanAssociationofMassachusetts_7 = new L.geoJson(json_NewAmericanAssociationofMassachusetts_7, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_SomaliParentsAdvocacyCenterforEducation_7',
-            layerName: 'layer_SomaliParentsAdvocacyCenterforEducation_7',
-            pane: 'pane_SomaliParentsAdvocacyCenterforEducation_7',
-            onEachFeature: pop_SomaliParentsAdvocacyCenterforEducation_7,
-            style: style_SomaliParentsAdvocacyCenterforEducation_7_0,
+            dataVar: 'json_NewAmericanAssociationofMassachusetts_7',
+            layerName: 'layer_NewAmericanAssociationofMassachusetts_7',
+            pane: 'pane_NewAmericanAssociationofMassachusetts_7',
+            onEachFeature: pop_NewAmericanAssociationofMassachusetts_7,
+            style: style_NewAmericanAssociationofMassachusetts_7_0,
         });
-        bounds_group.addLayer(layer_SomaliParentsAdvocacyCenterforEducation_7);
-        function pop_QARI_8(feature, layer) {
+        bounds_group.addLayer(layer_NewAmericanAssociationofMassachusetts_7);
+        function pop_LaColaborativa_8(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -557,9 +497,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_QARI_8_0() {
+        function style_LaColaborativa_8_0() {
             return {
-                pane: 'pane_QARI_8',
+                pane: 'pane_LaColaborativa_8',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -568,35 +508,128 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(141,90,153,1.0)',
+                fillColor: 'rgba(0,96,11,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_QARI_8');
-        map.getPane('pane_QARI_8').style.zIndex = 408;
-        map.getPane('pane_QARI_8').style['mix-blend-mode'] = 'normal';
-        var layer_QARI_8 = new L.geoJson(json_QARI_8, {
+        map.createPane('pane_LaColaborativa_8');
+        map.getPane('pane_LaColaborativa_8').style.zIndex = 408;
+        map.getPane('pane_LaColaborativa_8').style['mix-blend-mode'] = 'normal';
+        var layer_LaColaborativa_8 = new L.geoJson(json_LaColaborativa_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_QARI_8',
-            layerName: 'layer_QARI_8',
-            pane: 'pane_QARI_8',
-            onEachFeature: pop_QARI_8,
-            style: style_QARI_8_0,
+            dataVar: 'json_LaColaborativa_8',
+            layerName: 'layer_LaColaborativa_8',
+            pane: 'pane_LaColaborativa_8',
+            onEachFeature: pop_LaColaborativa_8,
+            style: style_LaColaborativa_8_0,
         });
-        bounds_group.addLayer(layer_QARI_8);
-        function pop_OuterCapeHealthServices_9(feature, layer) {
+        bounds_group.addLayer(layer_LaColaborativa_8);
+        function pop_TapestryHealth_9(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">TOWN</th>\
+                        <td>' + (feature.properties['TOWN'] !== null ? autolinker.link(feature.properties['TOWN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Community(s) of Focus</th>\
+                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_TapestryHealth_9_0() {
+            return {
+                pane: 'pane_TapestryHealth_9',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(140,0,65,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_TapestryHealth_9');
+        map.getPane('pane_TapestryHealth_9').style.zIndex = 409;
+        map.getPane('pane_TapestryHealth_9').style['mix-blend-mode'] = 'normal';
+        var layer_TapestryHealth_9 = new L.geoJson(json_TapestryHealth_9, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_TapestryHealth_9',
+            layerName: 'layer_TapestryHealth_9',
+            pane: 'pane_TapestryHealth_9',
+            onEachFeature: pop_TapestryHealth_9,
+            style: style_TapestryHealth_9_0,
+        });
+        bounds_group.addLayer(layer_TapestryHealth_9);
+        function pop_FatherBillsMainSpring_10(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">TOWN</th>\
+                        <td>' + (feature.properties['TOWN'] !== null ? autolinker.link(feature.properties['TOWN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Community(s) of Focus</th>\
+                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_FatherBillsMainSpring_10_0() {
+            return {
+                pane: 'pane_FatherBillsMainSpring_10',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(140,0,65,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_FatherBillsMainSpring_10');
+        map.getPane('pane_FatherBillsMainSpring_10').style.zIndex = 410;
+        map.getPane('pane_FatherBillsMainSpring_10').style['mix-blend-mode'] = 'normal';
+        var layer_FatherBillsMainSpring_10 = new L.geoJson(json_FatherBillsMainSpring_10, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_FatherBillsMainSpring_10',
+            layerName: 'layer_FatherBillsMainSpring_10',
+            pane: 'pane_FatherBillsMainSpring_10',
+            onEachFeature: pop_FatherBillsMainSpring_10,
+            style: style_FatherBillsMainSpring_10_0,
+        });
+        bounds_group.addLayer(layer_FatherBillsMainSpring_10);
+        function pop_OuterCapeHealthServices_11(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
                     }
                 },
                 mouseover: highlightFeature,
@@ -613,9 +646,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_OuterCapeHealthServices_9_0() {
+        function style_OuterCapeHealthServices_11_0() {
             return {
-                pane: 'pane_OuterCapeHealthServices_9',
+                pane: 'pane_OuterCapeHealthServices_11',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -624,35 +657,28 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(114,155,111,1.0)',
+                fillColor: 'rgba(250,240,97,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_OuterCapeHealthServices_9');
-        map.getPane('pane_OuterCapeHealthServices_9').style.zIndex = 409;
-        map.getPane('pane_OuterCapeHealthServices_9').style['mix-blend-mode'] = 'normal';
-        var layer_OuterCapeHealthServices_9 = new L.geoJson(json_OuterCapeHealthServices_9, {
+        map.createPane('pane_OuterCapeHealthServices_11');
+        map.getPane('pane_OuterCapeHealthServices_11').style.zIndex = 411;
+        map.getPane('pane_OuterCapeHealthServices_11').style['mix-blend-mode'] = 'normal';
+        var layer_OuterCapeHealthServices_11 = new L.geoJson(json_OuterCapeHealthServices_11, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_OuterCapeHealthServices_9',
-            layerName: 'layer_OuterCapeHealthServices_9',
-            pane: 'pane_OuterCapeHealthServices_9',
-            onEachFeature: pop_OuterCapeHealthServices_9,
-            style: style_OuterCapeHealthServices_9_0,
+            dataVar: 'json_OuterCapeHealthServices_11',
+            layerName: 'layer_OuterCapeHealthServices_11',
+            pane: 'pane_OuterCapeHealthServices_11',
+            onEachFeature: pop_OuterCapeHealthServices_11,
+            style: style_OuterCapeHealthServices_11_0,
         });
-        bounds_group.addLayer(layer_OuterCapeHealthServices_9);
-        function pop_NewAmericanAssociationofMassachusetts_10(feature, layer) {
+        bounds_group.addLayer(layer_OuterCapeHealthServices_11);
+        function pop_FamilyServicesofMerrimackValley_12(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -670,9 +696,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_NewAmericanAssociationofMassachusetts_10_0() {
+        function style_FamilyServicesofMerrimackValley_12_0() {
             return {
-                pane: 'pane_NewAmericanAssociationofMassachusetts_10',
+                pane: 'pane_FamilyServicesofMerrimackValley_12',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -681,35 +707,28 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(164,113,88,1.0)',
+                fillColor: 'rgba(250,240,97,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_NewAmericanAssociationofMassachusetts_10');
-        map.getPane('pane_NewAmericanAssociationofMassachusetts_10').style.zIndex = 410;
-        map.getPane('pane_NewAmericanAssociationofMassachusetts_10').style['mix-blend-mode'] = 'normal';
-        var layer_NewAmericanAssociationofMassachusetts_10 = new L.geoJson(json_NewAmericanAssociationofMassachusetts_10, {
+        map.createPane('pane_FamilyServicesofMerrimackValley_12');
+        map.getPane('pane_FamilyServicesofMerrimackValley_12').style.zIndex = 412;
+        map.getPane('pane_FamilyServicesofMerrimackValley_12').style['mix-blend-mode'] = 'normal';
+        var layer_FamilyServicesofMerrimackValley_12 = new L.geoJson(json_FamilyServicesofMerrimackValley_12, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_NewAmericanAssociationofMassachusetts_10',
-            layerName: 'layer_NewAmericanAssociationofMassachusetts_10',
-            pane: 'pane_NewAmericanAssociationofMassachusetts_10',
-            onEachFeature: pop_NewAmericanAssociationofMassachusetts_10,
-            style: style_NewAmericanAssociationofMassachusetts_10_0,
+            dataVar: 'json_FamilyServicesofMerrimackValley_12',
+            layerName: 'layer_FamilyServicesofMerrimackValley_12',
+            pane: 'pane_FamilyServicesofMerrimackValley_12',
+            onEachFeature: pop_FamilyServicesofMerrimackValley_12,
+            style: style_FamilyServicesofMerrimackValley_12_0,
         });
-        bounds_group.addLayer(layer_NewAmericanAssociationofMassachusetts_10);
-        function pop_MulticulturalAIDsCoalition_11(feature, layer) {
+        bounds_group.addLayer(layer_FamilyServicesofMerrimackValley_12);
+        function pop_VolunteersinMedicine_13(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -727,9 +746,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_MulticulturalAIDsCoalition_11_0() {
+        function style_VolunteersinMedicine_13_0() {
             return {
-                pane: 'pane_MulticulturalAIDsCoalition_11',
+                pane: 'pane_VolunteersinMedicine_13',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -738,91 +757,28 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(125,139,143,1.0)',
+                fillColor: 'rgba(73,75,221,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_MulticulturalAIDsCoalition_11');
-        map.getPane('pane_MulticulturalAIDsCoalition_11').style.zIndex = 411;
-        map.getPane('pane_MulticulturalAIDsCoalition_11').style['mix-blend-mode'] = 'normal';
-        var layer_MulticulturalAIDsCoalition_11 = new L.geoJson(json_MulticulturalAIDsCoalition_11, {
+        map.createPane('pane_VolunteersinMedicine_13');
+        map.getPane('pane_VolunteersinMedicine_13').style.zIndex = 413;
+        map.getPane('pane_VolunteersinMedicine_13').style['mix-blend-mode'] = 'normal';
+        var layer_VolunteersinMedicine_13 = new L.geoJson(json_VolunteersinMedicine_13, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_MulticulturalAIDsCoalition_11',
-            layerName: 'layer_MulticulturalAIDsCoalition_11',
-            pane: 'pane_MulticulturalAIDsCoalition_11',
-            onEachFeature: pop_MulticulturalAIDsCoalition_11,
-            style: style_MulticulturalAIDsCoalition_11_0,
+            dataVar: 'json_VolunteersinMedicine_13',
+            layerName: 'layer_VolunteersinMedicine_13',
+            pane: 'pane_VolunteersinMedicine_13',
+            onEachFeature: pop_VolunteersinMedicine_13,
+            style: style_VolunteersinMedicine_13_0,
         });
-        bounds_group.addLayer(layer_MulticulturalAIDsCoalition_11);
-        function pop_MassachusettsAllianceofPortugueseSpeakers_12(feature, layer) {
+        bounds_group.addLayer(layer_VolunteersinMedicine_13);
+        function pop_VietAID_14(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NAME'] !== null ? autolinker.link(feature.properties['NAME'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Community(s) of Focus</th>\
-                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_MassachusettsAllianceofPortugueseSpeakers_12_0() {
-            return {
-                pane: 'pane_MassachusettsAllianceofPortugueseSpeakers_12',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(164,113,88,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_MassachusettsAllianceofPortugueseSpeakers_12');
-        map.getPane('pane_MassachusettsAllianceofPortugueseSpeakers_12').style.zIndex = 412;
-        map.getPane('pane_MassachusettsAllianceofPortugueseSpeakers_12').style['mix-blend-mode'] = 'normal';
-        var layer_MassachusettsAllianceofPortugueseSpeakers_12 = new L.geoJson(json_MassachusettsAllianceofPortugueseSpeakers_12, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_MassachusettsAllianceofPortugueseSpeakers_12',
-            layerName: 'layer_MassachusettsAllianceofPortugueseSpeakers_12',
-            pane: 'pane_MassachusettsAllianceofPortugueseSpeakers_12',
-            onEachFeature: pop_MassachusettsAllianceofPortugueseSpeakers_12,
-            style: style_MassachusettsAllianceofPortugueseSpeakers_12_0,
-        });
-        bounds_group.addLayer(layer_MassachusettsAllianceofPortugueseSpeakers_12);
-        function pop_LifePath_13(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -840,9 +796,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_LifePath_13_0() {
+        function style_VietAID_14_0() {
             return {
-                pane: 'pane_LifePath_13',
+                pane: 'pane_VietAID_14',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -851,91 +807,28 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(190,178,151,1.0)',
+                fillColor: 'rgba(73,75,221,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_LifePath_13');
-        map.getPane('pane_LifePath_13').style.zIndex = 413;
-        map.getPane('pane_LifePath_13').style['mix-blend-mode'] = 'normal';
-        var layer_LifePath_13 = new L.geoJson(json_LifePath_13, {
+        map.createPane('pane_VietAID_14');
+        map.getPane('pane_VietAID_14').style.zIndex = 414;
+        map.getPane('pane_VietAID_14').style['mix-blend-mode'] = 'normal';
+        var layer_VietAID_14 = new L.geoJson(json_VietAID_14, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_LifePath_13',
-            layerName: 'layer_LifePath_13',
-            pane: 'pane_LifePath_13',
-            onEachFeature: pop_LifePath_13,
-            style: style_LifePath_13_0,
+            dataVar: 'json_VietAID_14',
+            layerName: 'layer_VietAID_14',
+            pane: 'pane_VietAID_14',
+            onEachFeature: pop_VietAID_14,
+            style: style_VietAID_14_0,
         });
-        bounds_group.addLayer(layer_LifePath_13);
-        function pop_LGBTAsylumTaskForce_14(feature, layer) {
+        bounds_group.addLayer(layer_VietAID_14);
+        function pop_QARI_15(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NAME'] !== null ? autolinker.link(feature.properties['NAME'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Community(s) of Focus</th>\
-                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_LGBTAsylumTaskForce_14_0() {
-            return {
-                pane: 'pane_LGBTAsylumTaskForce_14',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(125,139,143,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_LGBTAsylumTaskForce_14');
-        map.getPane('pane_LGBTAsylumTaskForce_14').style.zIndex = 414;
-        map.getPane('pane_LGBTAsylumTaskForce_14').style['mix-blend-mode'] = 'normal';
-        var layer_LGBTAsylumTaskForce_14 = new L.geoJson(json_LGBTAsylumTaskForce_14, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_LGBTAsylumTaskForce_14',
-            layerName: 'layer_LGBTAsylumTaskForce_14',
-            pane: 'pane_LGBTAsylumTaskForce_14',
-            onEachFeature: pop_LGBTAsylumTaskForce_14,
-            style: style_LGBTAsylumTaskForce_14_0,
-        });
-        bounds_group.addLayer(layer_LGBTAsylumTaskForce_14);
-        function pop_LatinoPublicInstitute_15(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -953,9 +846,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_LatinoPublicInstitute_15_0() {
+        function style_QARI_15_0() {
             return {
-                pane: 'pane_LatinoPublicInstitute_15',
+                pane: 'pane_QARI_15',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -964,35 +857,28 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(229,182,54,1.0)',
+                fillColor: 'rgba(73,75,221,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_LatinoPublicInstitute_15');
-        map.getPane('pane_LatinoPublicInstitute_15').style.zIndex = 415;
-        map.getPane('pane_LatinoPublicInstitute_15').style['mix-blend-mode'] = 'normal';
-        var layer_LatinoPublicInstitute_15 = new L.geoJson(json_LatinoPublicInstitute_15, {
+        map.createPane('pane_QARI_15');
+        map.getPane('pane_QARI_15').style.zIndex = 415;
+        map.getPane('pane_QARI_15').style['mix-blend-mode'] = 'normal';
+        var layer_QARI_15 = new L.geoJson(json_QARI_15, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_LatinoPublicInstitute_15',
-            layerName: 'layer_LatinoPublicInstitute_15',
-            pane: 'pane_LatinoPublicInstitute_15',
-            onEachFeature: pop_LatinoPublicInstitute_15,
-            style: style_LatinoPublicInstitute_15_0,
+            dataVar: 'json_QARI_15',
+            layerName: 'layer_QARI_15',
+            pane: 'pane_QARI_15',
+            onEachFeature: pop_QARI_15,
+            style: style_QARI_15_0,
         });
-        bounds_group.addLayer(layer_LatinoPublicInstitute_15);
-        function pop_LaColaborativa_16(feature, layer) {
+        bounds_group.addLayer(layer_QARI_15);
+        function pop_ImmigrantsAssistanceCenterInc_16(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -1010,9 +896,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_LaColaborativa_16_0() {
+        function style_ImmigrantsAssistanceCenterInc_16_0() {
             return {
-                pane: 'pane_LaColaborativa_16',
+                pane: 'pane_ImmigrantsAssistanceCenterInc_16',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1021,35 +907,28 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(190,207,80,1.0)',
+                fillColor: 'rgba(73,75,221,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_LaColaborativa_16');
-        map.getPane('pane_LaColaborativa_16').style.zIndex = 416;
-        map.getPane('pane_LaColaborativa_16').style['mix-blend-mode'] = 'normal';
-        var layer_LaColaborativa_16 = new L.geoJson(json_LaColaborativa_16, {
+        map.createPane('pane_ImmigrantsAssistanceCenterInc_16');
+        map.getPane('pane_ImmigrantsAssistanceCenterInc_16').style.zIndex = 416;
+        map.getPane('pane_ImmigrantsAssistanceCenterInc_16').style['mix-blend-mode'] = 'normal';
+        var layer_ImmigrantsAssistanceCenterInc_16 = new L.geoJson(json_ImmigrantsAssistanceCenterInc_16, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_LaColaborativa_16',
-            layerName: 'layer_LaColaborativa_16',
-            pane: 'pane_LaColaborativa_16',
-            onEachFeature: pop_LaColaborativa_16,
-            style: style_LaColaborativa_16_0,
+            dataVar: 'json_ImmigrantsAssistanceCenterInc_16',
+            layerName: 'layer_ImmigrantsAssistanceCenterInc_16',
+            pane: 'pane_ImmigrantsAssistanceCenterInc_16',
+            onEachFeature: pop_ImmigrantsAssistanceCenterInc_16,
+            style: style_ImmigrantsAssistanceCenterInc_16_0,
         });
-        bounds_group.addLayer(layer_LaColaborativa_16);
-        function pop_JusticeResourceInstitute_17(feature, layer) {
+        bounds_group.addLayer(layer_ImmigrantsAssistanceCenterInc_16);
+        function pop_EverettHaitianCommunityCenter_17(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -1067,9 +946,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_JusticeResourceInstitute_17_0() {
+        function style_EverettHaitianCommunityCenter_17_0() {
             return {
-                pane: 'pane_JusticeResourceInstitute_17',
+                pane: 'pane_EverettHaitianCommunityCenter_17',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1078,35 +957,28 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(231,113,72,1.0)',
+                fillColor: 'rgba(73,75,221,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_JusticeResourceInstitute_17');
-        map.getPane('pane_JusticeResourceInstitute_17').style.zIndex = 417;
-        map.getPane('pane_JusticeResourceInstitute_17').style['mix-blend-mode'] = 'normal';
-        var layer_JusticeResourceInstitute_17 = new L.geoJson(json_JusticeResourceInstitute_17, {
+        map.createPane('pane_EverettHaitianCommunityCenter_17');
+        map.getPane('pane_EverettHaitianCommunityCenter_17').style.zIndex = 417;
+        map.getPane('pane_EverettHaitianCommunityCenter_17').style['mix-blend-mode'] = 'normal';
+        var layer_EverettHaitianCommunityCenter_17 = new L.geoJson(json_EverettHaitianCommunityCenter_17, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_JusticeResourceInstitute_17',
-            layerName: 'layer_JusticeResourceInstitute_17',
-            pane: 'pane_JusticeResourceInstitute_17',
-            onEachFeature: pop_JusticeResourceInstitute_17,
-            style: style_JusticeResourceInstitute_17_0,
+            dataVar: 'json_EverettHaitianCommunityCenter_17',
+            layerName: 'layer_EverettHaitianCommunityCenter_17',
+            pane: 'pane_EverettHaitianCommunityCenter_17',
+            onEachFeature: pop_EverettHaitianCommunityCenter_17,
+            style: style_EverettHaitianCommunityCenter_17_0,
         });
-        bounds_group.addLayer(layer_JusticeResourceInstitute_17);
-        function pop_IslamicSocietyofBostonISBCC_18(feature, layer) {
+        bounds_group.addLayer(layer_EverettHaitianCommunityCenter_17);
+        function pop_FederationforChildrenwithSpecialNeeds_18(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -1124,9 +996,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_IslamicSocietyofBostonISBCC_18_0() {
+        function style_FederationforChildrenwithSpecialNeeds_18_0() {
             return {
-                pane: 'pane_IslamicSocietyofBostonISBCC_18',
+                pane: 'pane_FederationforChildrenwithSpecialNeeds_18',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1135,35 +1007,28 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,158,23,1.0)',
+                fillColor: 'rgba(210,0,24,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_IslamicSocietyofBostonISBCC_18');
-        map.getPane('pane_IslamicSocietyofBostonISBCC_18').style.zIndex = 418;
-        map.getPane('pane_IslamicSocietyofBostonISBCC_18').style['mix-blend-mode'] = 'normal';
-        var layer_IslamicSocietyofBostonISBCC_18 = new L.geoJson(json_IslamicSocietyofBostonISBCC_18, {
+        map.createPane('pane_FederationforChildrenwithSpecialNeeds_18');
+        map.getPane('pane_FederationforChildrenwithSpecialNeeds_18').style.zIndex = 418;
+        map.getPane('pane_FederationforChildrenwithSpecialNeeds_18').style['mix-blend-mode'] = 'normal';
+        var layer_FederationforChildrenwithSpecialNeeds_18 = new L.geoJson(json_FederationforChildrenwithSpecialNeeds_18, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_IslamicSocietyofBostonISBCC_18',
-            layerName: 'layer_IslamicSocietyofBostonISBCC_18',
-            pane: 'pane_IslamicSocietyofBostonISBCC_18',
-            onEachFeature: pop_IslamicSocietyofBostonISBCC_18,
-            style: style_IslamicSocietyofBostonISBCC_18_0,
+            dataVar: 'json_FederationforChildrenwithSpecialNeeds_18',
+            layerName: 'layer_FederationforChildrenwithSpecialNeeds_18',
+            pane: 'pane_FederationforChildrenwithSpecialNeeds_18',
+            onEachFeature: pop_FederationforChildrenwithSpecialNeeds_18,
+            style: style_FederationforChildrenwithSpecialNeeds_18_0,
         });
-        bounds_group.addLayer(layer_IslamicSocietyofBostonISBCC_18);
-        function pop_ImmigrantsAssistanceCenterInc_19(feature, layer) {
+        bounds_group.addLayer(layer_FederationforChildrenwithSpecialNeeds_18);
+        function pop_EnlacedeFamilias_19(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -1181,9 +1046,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_ImmigrantsAssistanceCenterInc_19_0() {
+        function style_EnlacedeFamilias_19_0() {
             return {
-                pane: 'pane_ImmigrantsAssistanceCenterInc_19',
+                pane: 'pane_EnlacedeFamilias_19',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1192,35 +1057,28 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(213,180,60,1.0)',
+                fillColor: 'rgba(210,0,24,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_ImmigrantsAssistanceCenterInc_19');
-        map.getPane('pane_ImmigrantsAssistanceCenterInc_19').style.zIndex = 419;
-        map.getPane('pane_ImmigrantsAssistanceCenterInc_19').style['mix-blend-mode'] = 'normal';
-        var layer_ImmigrantsAssistanceCenterInc_19 = new L.geoJson(json_ImmigrantsAssistanceCenterInc_19, {
+        map.createPane('pane_EnlacedeFamilias_19');
+        map.getPane('pane_EnlacedeFamilias_19').style.zIndex = 419;
+        map.getPane('pane_EnlacedeFamilias_19').style['mix-blend-mode'] = 'normal';
+        var layer_EnlacedeFamilias_19 = new L.geoJson(json_EnlacedeFamilias_19, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ImmigrantsAssistanceCenterInc_19',
-            layerName: 'layer_ImmigrantsAssistanceCenterInc_19',
-            pane: 'pane_ImmigrantsAssistanceCenterInc_19',
-            onEachFeature: pop_ImmigrantsAssistanceCenterInc_19,
-            style: style_ImmigrantsAssistanceCenterInc_19_0,
+            dataVar: 'json_EnlacedeFamilias_19',
+            layerName: 'layer_EnlacedeFamilias_19',
+            pane: 'pane_EnlacedeFamilias_19',
+            onEachFeature: pop_EnlacedeFamilias_19,
+            style: style_EnlacedeFamilias_19_0,
         });
-        bounds_group.addLayer(layer_ImmigrantsAssistanceCenterInc_19);
-        function pop_FederationforChildrenwithSpecialNeeds_20(feature, layer) {
+        bounds_group.addLayer(layer_EnlacedeFamilias_19);
+        function pop_LifePath_20(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -1238,9 +1096,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_FederationforChildrenwithSpecialNeeds_20_0() {
+        function style_LifePath_20_0() {
             return {
-                pane: 'pane_FederationforChildrenwithSpecialNeeds_20',
+                pane: 'pane_LifePath_20',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1249,375 +1107,28 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(196,60,57,1.0)',
+                fillColor: 'rgba(253,153,255,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_FederationforChildrenwithSpecialNeeds_20');
-        map.getPane('pane_FederationforChildrenwithSpecialNeeds_20').style.zIndex = 420;
-        map.getPane('pane_FederationforChildrenwithSpecialNeeds_20').style['mix-blend-mode'] = 'normal';
-        var layer_FederationforChildrenwithSpecialNeeds_20 = new L.geoJson(json_FederationforChildrenwithSpecialNeeds_20, {
+        map.createPane('pane_LifePath_20');
+        map.getPane('pane_LifePath_20').style.zIndex = 420;
+        map.getPane('pane_LifePath_20').style['mix-blend-mode'] = 'normal';
+        var layer_LifePath_20 = new L.geoJson(json_LifePath_20, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_FederationforChildrenwithSpecialNeeds_20',
-            layerName: 'layer_FederationforChildrenwithSpecialNeeds_20',
-            pane: 'pane_FederationforChildrenwithSpecialNeeds_20',
-            onEachFeature: pop_FederationforChildrenwithSpecialNeeds_20,
-            style: style_FederationforChildrenwithSpecialNeeds_20_0,
+            dataVar: 'json_LifePath_20',
+            layerName: 'layer_LifePath_20',
+            pane: 'pane_LifePath_20',
+            onEachFeature: pop_LifePath_20,
+            style: style_LifePath_20_0,
         });
-        bounds_group.addLayer(layer_FederationforChildrenwithSpecialNeeds_20);
-        function pop_FatherBillsMainSpring_21(feature, layer) {
+        bounds_group.addLayer(layer_LifePath_20);
+        function pop_DEAFInc_21(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">TOWN</th>\
-                        <td>' + (feature.properties['TOWN'] !== null ? autolinker.link(feature.properties['TOWN'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Community(s) of Focus</th>\
-                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_FatherBillsMainSpring_21_0() {
-            return {
-                pane: 'pane_FatherBillsMainSpring_21',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(229,182,54,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_FatherBillsMainSpring_21');
-        map.getPane('pane_FatherBillsMainSpring_21').style.zIndex = 421;
-        map.getPane('pane_FatherBillsMainSpring_21').style['mix-blend-mode'] = 'normal';
-        var layer_FatherBillsMainSpring_21 = new L.geoJson(json_FatherBillsMainSpring_21, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_FatherBillsMainSpring_21',
-            layerName: 'layer_FatherBillsMainSpring_21',
-            pane: 'pane_FatherBillsMainSpring_21',
-            onEachFeature: pop_FatherBillsMainSpring_21,
-            style: style_FatherBillsMainSpring_21_0,
-        });
-        bounds_group.addLayer(layer_FatherBillsMainSpring_21);
-        function pop_FamilyTIESofMA_22(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NAME'] !== null ? autolinker.link(feature.properties['NAME'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Community(s) of Focus</th>\
-                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_FamilyTIESofMA_22_0() {
-            return {
-                pane: 'pane_FamilyTIESofMA_22',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(190,178,151,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_FamilyTIESofMA_22');
-        map.getPane('pane_FamilyTIESofMA_22').style.zIndex = 422;
-        map.getPane('pane_FamilyTIESofMA_22').style['mix-blend-mode'] = 'normal';
-        var layer_FamilyTIESofMA_22 = new L.geoJson(json_FamilyTIESofMA_22, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_FamilyTIESofMA_22',
-            layerName: 'layer_FamilyTIESofMA_22',
-            pane: 'pane_FamilyTIESofMA_22',
-            onEachFeature: pop_FamilyTIESofMA_22,
-            style: style_FamilyTIESofMA_22_0,
-        });
-        bounds_group.addLayer(layer_FamilyTIESofMA_22);
-        function pop_FamilyServicesofMerrimackValley_23(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">TOWN</th>\
-                        <td>' + (feature.properties['TOWN'] !== null ? autolinker.link(feature.properties['TOWN'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Community(s) of Focus</th>\
-                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_FamilyServicesofMerrimackValley_23_0() {
-            return {
-                pane: 'pane_FamilyServicesofMerrimackValley_23',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(190,207,80,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_FamilyServicesofMerrimackValley_23');
-        map.getPane('pane_FamilyServicesofMerrimackValley_23').style.zIndex = 423;
-        map.getPane('pane_FamilyServicesofMerrimackValley_23').style['mix-blend-mode'] = 'normal';
-        var layer_FamilyServicesofMerrimackValley_23 = new L.geoJson(json_FamilyServicesofMerrimackValley_23, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_FamilyServicesofMerrimackValley_23',
-            layerName: 'layer_FamilyServicesofMerrimackValley_23',
-            pane: 'pane_FamilyServicesofMerrimackValley_23',
-            onEachFeature: pop_FamilyServicesofMerrimackValley_23,
-            style: style_FamilyServicesofMerrimackValley_23_0,
-        });
-        bounds_group.addLayer(layer_FamilyServicesofMerrimackValley_23);
-        function pop_EverettHaitianCommunityCenter_24(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">TOWN</th>\
-                        <td>' + (feature.properties['TOWN'] !== null ? autolinker.link(feature.properties['TOWN'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Community(s) of Focus</th>\
-                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_EverettHaitianCommunityCenter_24_0() {
-            return {
-                pane: 'pane_EverettHaitianCommunityCenter_24',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(231,113,72,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_EverettHaitianCommunityCenter_24');
-        map.getPane('pane_EverettHaitianCommunityCenter_24').style.zIndex = 424;
-        map.getPane('pane_EverettHaitianCommunityCenter_24').style['mix-blend-mode'] = 'normal';
-        var layer_EverettHaitianCommunityCenter_24 = new L.geoJson(json_EverettHaitianCommunityCenter_24, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_EverettHaitianCommunityCenter_24',
-            layerName: 'layer_EverettHaitianCommunityCenter_24',
-            pane: 'pane_EverettHaitianCommunityCenter_24',
-            onEachFeature: pop_EverettHaitianCommunityCenter_24,
-            style: style_EverettHaitianCommunityCenter_24_0,
-        });
-        bounds_group.addLayer(layer_EverettHaitianCommunityCenter_24);
-        function pop_EnlacedeFamilias_25(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">TOWN</th>\
-                        <td>' + (feature.properties['TOWN'] !== null ? autolinker.link(feature.properties['TOWN'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Community(s) of Focus</th>\
-                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_EnlacedeFamilias_25_0() {
-            return {
-                pane: 'pane_EnlacedeFamilias_25',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,158,23,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_EnlacedeFamilias_25');
-        map.getPane('pane_EnlacedeFamilias_25').style.zIndex = 425;
-        map.getPane('pane_EnlacedeFamilias_25').style['mix-blend-mode'] = 'normal';
-        var layer_EnlacedeFamilias_25 = new L.geoJson(json_EnlacedeFamilias_25, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_EnlacedeFamilias_25',
-            layerName: 'layer_EnlacedeFamilias_25',
-            pane: 'pane_EnlacedeFamilias_25',
-            onEachFeature: pop_EnlacedeFamilias_25,
-            style: style_EnlacedeFamilias_25_0,
-        });
-        bounds_group.addLayer(layer_EnlacedeFamilias_25);
-        function pop_DisabilityPolicyConsortium_26(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NAME'] !== null ? autolinker.link(feature.properties['NAME'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Community(s) of Focus</th>\
-                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_DisabilityPolicyConsortium_26_0() {
-            return {
-                pane: 'pane_DisabilityPolicyConsortium_26',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(229,182,54,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_DisabilityPolicyConsortium_26');
-        map.getPane('pane_DisabilityPolicyConsortium_26').style.zIndex = 426;
-        map.getPane('pane_DisabilityPolicyConsortium_26').style['mix-blend-mode'] = 'normal';
-        var layer_DisabilityPolicyConsortium_26 = new L.geoJson(json_DisabilityPolicyConsortium_26, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_DisabilityPolicyConsortium_26',
-            layerName: 'layer_DisabilityPolicyConsortium_26',
-            pane: 'pane_DisabilityPolicyConsortium_26',
-            onEachFeature: pop_DisabilityPolicyConsortium_26,
-            style: style_DisabilityPolicyConsortium_26_0,
-        });
-        bounds_group.addLayer(layer_DisabilityPolicyConsortium_26);
-        function pop_DEAFInc_27(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -1634,9 +1145,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_DEAFInc_27_0() {
+        function style_DEAFInc_21_0() {
             return {
-                pane: 'pane_DEAFInc_27',
+                pane: 'pane_DEAFInc_21',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1645,35 +1156,28 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,158,23,1.0)',
+                fillColor: 'rgba(253,153,255,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_DEAFInc_27');
-        map.getPane('pane_DEAFInc_27').style.zIndex = 427;
-        map.getPane('pane_DEAFInc_27').style['mix-blend-mode'] = 'normal';
-        var layer_DEAFInc_27 = new L.geoJson(json_DEAFInc_27, {
+        map.createPane('pane_DEAFInc_21');
+        map.getPane('pane_DEAFInc_21').style.zIndex = 421;
+        map.getPane('pane_DEAFInc_21').style['mix-blend-mode'] = 'normal';
+        var layer_DEAFInc_21 = new L.geoJson(json_DEAFInc_21, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_DEAFInc_27',
-            layerName: 'layer_DEAFInc_27',
-            pane: 'pane_DEAFInc_27',
-            onEachFeature: pop_DEAFInc_27,
-            style: style_DEAFInc_27_0,
+            dataVar: 'json_DEAFInc_21',
+            layerName: 'layer_DEAFInc_21',
+            pane: 'pane_DEAFInc_21',
+            onEachFeature: pop_DEAFInc_21,
+            style: style_DEAFInc_21_0,
         });
-        bounds_group.addLayer(layer_DEAFInc_27);
-        function pop_CentralMassachussettsAgencyonAging_28(feature, layer) {
+        bounds_group.addLayer(layer_DEAFInc_21);
+        function pop_SomaliParentsAdvocacyCenterforEducation_22(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -1691,237 +1195,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_CentralMassachussettsAgencyonAging_28_0() {
+        function style_SomaliParentsAdvocacyCenterforEducation_22_0() {
             return {
-                pane: 'pane_CentralMassachussettsAgencyonAging_28',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(114,155,111,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_CentralMassachussettsAgencyonAging_28');
-        map.getPane('pane_CentralMassachussettsAgencyonAging_28').style.zIndex = 428;
-        map.getPane('pane_CentralMassachussettsAgencyonAging_28').style['mix-blend-mode'] = 'normal';
-        var layer_CentralMassachussettsAgencyonAging_28 = new L.geoJson(json_CentralMassachussettsAgencyonAging_28, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_CentralMassachussettsAgencyonAging_28',
-            layerName: 'layer_CentralMassachussettsAgencyonAging_28',
-            pane: 'pane_CentralMassachussettsAgencyonAging_28',
-            onEachFeature: pop_CentralMassachussettsAgencyonAging_28,
-            style: style_CentralMassachussettsAgencyonAging_28_0,
-        });
-        bounds_group.addLayer(layer_CentralMassachussettsAgencyonAging_28);
-        function pop_CenterforArabicCulture_29(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">TOWN</th>\
-                        <td>' + (feature.properties['TOWN'] !== null ? autolinker.link(feature.properties['TOWN'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Community(s) of Focus</th>\
-                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_CenterforArabicCulture_29_0() {
-            return {
-                pane: 'pane_CenterforArabicCulture_29',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(141,90,153,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_CenterforArabicCulture_29');
-        map.getPane('pane_CenterforArabicCulture_29').style.zIndex = 429;
-        map.getPane('pane_CenterforArabicCulture_29').style['mix-blend-mode'] = 'normal';
-        var layer_CenterforArabicCulture_29 = new L.geoJson(json_CenterforArabicCulture_29, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_CenterforArabicCulture_29',
-            layerName: 'layer_CenterforArabicCulture_29',
-            pane: 'pane_CenterforArabicCulture_29',
-            onEachFeature: pop_CenterforArabicCulture_29,
-            style: style_CenterforArabicCulture_29_0,
-        });
-        bounds_group.addLayer(layer_CenterforArabicCulture_29);
-        function pop_CambodianMutualAssistanceAssociation_30(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">TOWN</th>\
-                        <td>' + (feature.properties['TOWN'] !== null ? autolinker.link(feature.properties['TOWN'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Community(s) of Focus</th>\
-                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_CambodianMutualAssistanceAssociation_30_0() {
-            return {
-                pane: 'pane_CambodianMutualAssistanceAssociation_30',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(114,155,111,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_CambodianMutualAssistanceAssociation_30');
-        map.getPane('pane_CambodianMutualAssistanceAssociation_30').style.zIndex = 430;
-        map.getPane('pane_CambodianMutualAssistanceAssociation_30').style['mix-blend-mode'] = 'normal';
-        var layer_CambodianMutualAssistanceAssociation_30 = new L.geoJson(json_CambodianMutualAssistanceAssociation_30, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_CambodianMutualAssistanceAssociation_30',
-            layerName: 'layer_CambodianMutualAssistanceAssociation_30',
-            pane: 'pane_CambodianMutualAssistanceAssociation_30',
-            onEachFeature: pop_CambodianMutualAssistanceAssociation_30,
-            style: style_CambodianMutualAssistanceAssociation_30_0,
-        });
-        bounds_group.addLayer(layer_CambodianMutualAssistanceAssociation_30);
-        function pop_BostonChinatownNeighborhoodCenter_31(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">TOWN</th>\
-                        <td>' + (feature.properties['TOWN'] !== null ? autolinker.link(feature.properties['TOWN'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Community(s) of Focus</th>\
-                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_BostonChinatownNeighborhoodCenter_31_0() {
-            return {
-                pane: 'pane_BostonChinatownNeighborhoodCenter_31',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(225,89,137,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_BostonChinatownNeighborhoodCenter_31');
-        map.getPane('pane_BostonChinatownNeighborhoodCenter_31').style.zIndex = 431;
-        map.getPane('pane_BostonChinatownNeighborhoodCenter_31').style['mix-blend-mode'] = 'normal';
-        var layer_BostonChinatownNeighborhoodCenter_31 = new L.geoJson(json_BostonChinatownNeighborhoodCenter_31, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_BostonChinatownNeighborhoodCenter_31',
-            layerName: 'layer_BostonChinatownNeighborhoodCenter_31',
-            pane: 'pane_BostonChinatownNeighborhoodCenter_31',
-            onEachFeature: pop_BostonChinatownNeighborhoodCenter_31,
-            style: style_BostonChinatownNeighborhoodCenter_31_0,
-        });
-        bounds_group.addLayer(layer_BostonChinatownNeighborhoodCenter_31);
-        function pop_AuthenticCarribeanFoundation_32(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">TOWN</th>\
-                        <td>' + (feature.properties['TOWN'] !== null ? autolinker.link(feature.properties['TOWN'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Community(s) of Focus</th>\
-                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_AuthenticCarribeanFoundation_32_0() {
-            return {
-                pane: 'pane_AuthenticCarribeanFoundation_32',
+                pane: 'pane_SomaliParentsAdvocacyCenterforEducation_22',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1934,31 +1210,24 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_AuthenticCarribeanFoundation_32');
-        map.getPane('pane_AuthenticCarribeanFoundation_32').style.zIndex = 432;
-        map.getPane('pane_AuthenticCarribeanFoundation_32').style['mix-blend-mode'] = 'normal';
-        var layer_AuthenticCarribeanFoundation_32 = new L.geoJson(json_AuthenticCarribeanFoundation_32, {
+        map.createPane('pane_SomaliParentsAdvocacyCenterforEducation_22');
+        map.getPane('pane_SomaliParentsAdvocacyCenterforEducation_22').style.zIndex = 422;
+        map.getPane('pane_SomaliParentsAdvocacyCenterforEducation_22').style['mix-blend-mode'] = 'normal';
+        var layer_SomaliParentsAdvocacyCenterforEducation_22 = new L.geoJson(json_SomaliParentsAdvocacyCenterforEducation_22, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_AuthenticCarribeanFoundation_32',
-            layerName: 'layer_AuthenticCarribeanFoundation_32',
-            pane: 'pane_AuthenticCarribeanFoundation_32',
-            onEachFeature: pop_AuthenticCarribeanFoundation_32,
-            style: style_AuthenticCarribeanFoundation_32_0,
+            dataVar: 'json_SomaliParentsAdvocacyCenterforEducation_22',
+            layerName: 'layer_SomaliParentsAdvocacyCenterforEducation_22',
+            pane: 'pane_SomaliParentsAdvocacyCenterforEducation_22',
+            onEachFeature: pop_SomaliParentsAdvocacyCenterforEducation_22,
+            style: style_SomaliParentsAdvocacyCenterforEducation_22_0,
         });
-        bounds_group.addLayer(layer_AuthenticCarribeanFoundation_32);
-        function pop_Mass4HFoundation_33(feature, layer) {
+        bounds_group.addLayer(layer_SomaliParentsAdvocacyCenterforEducation_22);
+        function pop_IslamicSocietyofBostonISBCC_23(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -1976,9 +1245,259 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Mass4HFoundation_33_0() {
+        function style_IslamicSocietyofBostonISBCC_23_0() {
             return {
-                pane: 'pane_Mass4HFoundation_33',
+                pane: 'pane_IslamicSocietyofBostonISBCC_23',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(152,125,183,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_IslamicSocietyofBostonISBCC_23');
+        map.getPane('pane_IslamicSocietyofBostonISBCC_23').style.zIndex = 423;
+        map.getPane('pane_IslamicSocietyofBostonISBCC_23').style['mix-blend-mode'] = 'normal';
+        var layer_IslamicSocietyofBostonISBCC_23 = new L.geoJson(json_IslamicSocietyofBostonISBCC_23, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_IslamicSocietyofBostonISBCC_23',
+            layerName: 'layer_IslamicSocietyofBostonISBCC_23',
+            pane: 'pane_IslamicSocietyofBostonISBCC_23',
+            onEachFeature: pop_IslamicSocietyofBostonISBCC_23,
+            style: style_IslamicSocietyofBostonISBCC_23_0,
+        });
+        bounds_group.addLayer(layer_IslamicSocietyofBostonISBCC_23);
+        function pop_LatinoPublicInstitute_24(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">TOWN</th>\
+                        <td>' + (feature.properties['TOWN'] !== null ? autolinker.link(feature.properties['TOWN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Community(s) of Focus</th>\
+                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_LatinoPublicInstitute_24_0() {
+            return {
+                pane: 'pane_LatinoPublicInstitute_24',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(152,125,183,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_LatinoPublicInstitute_24');
+        map.getPane('pane_LatinoPublicInstitute_24').style.zIndex = 424;
+        map.getPane('pane_LatinoPublicInstitute_24').style['mix-blend-mode'] = 'normal';
+        var layer_LatinoPublicInstitute_24 = new L.geoJson(json_LatinoPublicInstitute_24, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_LatinoPublicInstitute_24',
+            layerName: 'layer_LatinoPublicInstitute_24',
+            pane: 'pane_LatinoPublicInstitute_24',
+            onEachFeature: pop_LatinoPublicInstitute_24,
+            style: style_LatinoPublicInstitute_24_0,
+        });
+        bounds_group.addLayer(layer_LatinoPublicInstitute_24);
+        function pop_CenterforArabicCulture_25(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">TOWN</th>\
+                        <td>' + (feature.properties['TOWN'] !== null ? autolinker.link(feature.properties['TOWN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Community(s) of Focus</th>\
+                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_CenterforArabicCulture_25_0() {
+            return {
+                pane: 'pane_CenterforArabicCulture_25',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(152,125,183,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_CenterforArabicCulture_25');
+        map.getPane('pane_CenterforArabicCulture_25').style.zIndex = 425;
+        map.getPane('pane_CenterforArabicCulture_25').style['mix-blend-mode'] = 'normal';
+        var layer_CenterforArabicCulture_25 = new L.geoJson(json_CenterforArabicCulture_25, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_CenterforArabicCulture_25',
+            layerName: 'layer_CenterforArabicCulture_25',
+            pane: 'pane_CenterforArabicCulture_25',
+            onEachFeature: pop_CenterforArabicCulture_25,
+            style: style_CenterforArabicCulture_25_0,
+        });
+        bounds_group.addLayer(layer_CenterforArabicCulture_25);
+        function pop_BostonChinatownNeighborhoodCenter_26(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">TOWN</th>\
+                        <td>' + (feature.properties['TOWN'] !== null ? autolinker.link(feature.properties['TOWN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Community(s) of Focus</th>\
+                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_BostonChinatownNeighborhoodCenter_26_0() {
+            return {
+                pane: 'pane_BostonChinatownNeighborhoodCenter_26',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(152,125,183,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_BostonChinatownNeighborhoodCenter_26');
+        map.getPane('pane_BostonChinatownNeighborhoodCenter_26').style.zIndex = 426;
+        map.getPane('pane_BostonChinatownNeighborhoodCenter_26').style['mix-blend-mode'] = 'normal';
+        var layer_BostonChinatownNeighborhoodCenter_26 = new L.geoJson(json_BostonChinatownNeighborhoodCenter_26, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_BostonChinatownNeighborhoodCenter_26',
+            layerName: 'layer_BostonChinatownNeighborhoodCenter_26',
+            pane: 'pane_BostonChinatownNeighborhoodCenter_26',
+            onEachFeature: pop_BostonChinatownNeighborhoodCenter_26,
+            style: style_BostonChinatownNeighborhoodCenter_26_0,
+        });
+        bounds_group.addLayer(layer_BostonChinatownNeighborhoodCenter_26);
+        function pop_AuthenticCarribeanFoundation_27(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">TOWN</th>\
+                        <td>' + (feature.properties['TOWN'] !== null ? autolinker.link(feature.properties['TOWN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Community(s) of Focus</th>\
+                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_AuthenticCarribeanFoundation_27_0() {
+            return {
+                pane: 'pane_AuthenticCarribeanFoundation_27',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(152,125,183,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_AuthenticCarribeanFoundation_27');
+        map.getPane('pane_AuthenticCarribeanFoundation_27').style.zIndex = 427;
+        map.getPane('pane_AuthenticCarribeanFoundation_27').style['mix-blend-mode'] = 'normal';
+        var layer_AuthenticCarribeanFoundation_27 = new L.geoJson(json_AuthenticCarribeanFoundation_27, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_AuthenticCarribeanFoundation_27',
+            layerName: 'layer_AuthenticCarribeanFoundation_27',
+            pane: 'pane_AuthenticCarribeanFoundation_27',
+            onEachFeature: pop_AuthenticCarribeanFoundation_27,
+            style: style_AuthenticCarribeanFoundation_27_0,
+        });
+        bounds_group.addLayer(layer_AuthenticCarribeanFoundation_27);
+        function pop_JusticeResourceInstitute_28(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">TOWN</th>\
+                        <td>' + (feature.properties['TOWN'] !== null ? autolinker.link(feature.properties['TOWN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Community(s) of Focus</th>\
+                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_JusticeResourceInstitute_28_0() {
+            return {
+                pane: 'pane_JusticeResourceInstitute_28',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1991,19 +1510,148 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Mass4HFoundation_33');
-        map.getPane('pane_Mass4HFoundation_33').style.zIndex = 433;
-        map.getPane('pane_Mass4HFoundation_33').style['mix-blend-mode'] = 'normal';
-        var layer_Mass4HFoundation_33 = new L.geoJson(json_Mass4HFoundation_33, {
+        map.createPane('pane_JusticeResourceInstitute_28');
+        map.getPane('pane_JusticeResourceInstitute_28').style.zIndex = 428;
+        map.getPane('pane_JusticeResourceInstitute_28').style['mix-blend-mode'] = 'normal';
+        var layer_JusticeResourceInstitute_28 = new L.geoJson(json_JusticeResourceInstitute_28, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Mass4HFoundation_33',
-            layerName: 'layer_Mass4HFoundation_33',
-            pane: 'pane_Mass4HFoundation_33',
-            onEachFeature: pop_Mass4HFoundation_33,
-            style: style_Mass4HFoundation_33_0,
+            dataVar: 'json_JusticeResourceInstitute_28',
+            layerName: 'layer_JusticeResourceInstitute_28',
+            pane: 'pane_JusticeResourceInstitute_28',
+            onEachFeature: pop_JusticeResourceInstitute_28,
+            style: style_JusticeResourceInstitute_28_0,
         });
-        bounds_group.addLayer(layer_Mass4HFoundation_33);
+        bounds_group.addLayer(layer_JusticeResourceInstitute_28);
+        function pop_Mass4HFoundation_29(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">TOWN</th>\
+                        <td>' + (feature.properties['TOWN'] !== null ? autolinker.link(feature.properties['TOWN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Community(s) of Focus</th>\
+                        <td>' + (feature.properties['FocusPop'] !== null ? autolinker.link(feature.properties['FocusPop'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Mass4HFoundation_29_0() {
+            return {
+                pane: 'pane_Mass4HFoundation_29',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(231,113,72,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Mass4HFoundation_29');
+        map.getPane('pane_Mass4HFoundation_29').style.zIndex = 429;
+        map.getPane('pane_Mass4HFoundation_29').style['mix-blend-mode'] = 'normal';
+        var layer_Mass4HFoundation_29 = new L.geoJson(json_Mass4HFoundation_29, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Mass4HFoundation_29',
+            layerName: 'layer_Mass4HFoundation_29',
+            pane: 'pane_Mass4HFoundation_29',
+            onEachFeature: pop_Mass4HFoundation_29,
+            style: style_Mass4HFoundation_29_0,
+        });
+        bounds_group.addLayer(layer_Mass4HFoundation_29);
+        function pop_CommunitysofFocus_30(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>Youth & Young Adults </strong><br />' + (feature.properties['Youth'] !== null ? autolinker.link(feature.properties['Youth'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>People of Color </strong><br />' + (feature.properties['PplColor'] !== null ? autolinker.link(feature.properties['PplColor'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Immigrants, People of Color</strong><br />' + (feature.properties['ImmPplCol'] !== null ? autolinker.link(feature.properties['ImmPplCol'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Older Adults (Age 60+)</strong><br />' + (feature.properties['OldPpl'] !== null ? autolinker.link(feature.properties['OldPpl'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>People with Disabilties </strong><br />' + (feature.properties['Disability'] !== null ? autolinker.link(feature.properties['Disability'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Parents of Youth with Special Health Care Needs</strong><br />' + (feature.properties['SpecialCar'] !== null ? autolinker.link(feature.properties['SpecialCar'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Immigrants </strong><br />' + (feature.properties['Immigrants'] !== null ? autolinker.link(feature.properties['Immigrants'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Parents and Pregnant People (Young Parents)</strong><br />' + (feature.properties['Pregnant'] !== null ? autolinker.link(feature.properties['Pregnant'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Unhoused People </strong><br />' + (feature.properties['Unhoused'] !== null ? autolinker.link(feature.properties['Unhoused'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>People whose primary language isn\'t English </strong><br />' + (feature.properties['NoEnglish'] !== null ? autolinker.link(feature.properties['NoEnglish'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>LGBTQIA+</strong><br />' + (feature.properties['LGBTQ'] !== null ? autolinker.link(feature.properties['LGBTQ'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Formerly Incarcerated </strong><br />' + (feature.properties['Incarcerat'] !== null ? autolinker.link(feature.properties['Incarcerat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_CommunitysofFocus_30_0() {
+            return {
+                pane: 'pane_CommunitysofFocus_30',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,0,0,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_CommunitysofFocus_30');
+        map.getPane('pane_CommunitysofFocus_30').style.zIndex = 430;
+        map.getPane('pane_CommunitysofFocus_30').style['mix-blend-mode'] = 'normal';
+        var layer_CommunitysofFocus_30 = new L.geoJson(json_CommunitysofFocus_30, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_CommunitysofFocus_30',
+            layerName: 'layer_CommunitysofFocus_30',
+            pane: 'pane_CommunitysofFocus_30',
+            onEachFeature: pop_CommunitysofFocus_30,
+            style: style_CommunitysofFocus_30_0,
+        });
+        bounds_group.addLayer(layer_CommunitysofFocus_30);
+        map.addLayer(layer_CommunitysofFocus_30);
             var title = new L.Control();
             title.onAdd = function (map) {
                 this._div = L.DomUtil.create('div', 'info');
@@ -2030,17 +1678,17 @@
             };
             abstract.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/Mass4HFoundation_33.png" /> Mass 4H Foundation': layer_Mass4HFoundation_33,'<img src="legend/AuthenticCarribeanFoundation_32.png" /> Authentic Carribean Foundation': layer_AuthenticCarribeanFoundation_32,'<img src="legend/BostonChinatownNeighborhoodCenter_31.png" /> Boston Chinatown Neighborhood Center': layer_BostonChinatownNeighborhoodCenter_31,'<img src="legend/CambodianMutualAssistanceAssociation_30.png" /> Cambodian Mutual Assistance Association ': layer_CambodianMutualAssistanceAssociation_30,'<img src="legend/CenterforArabicCulture_29.png" /> Center for Arabic Culture ': layer_CenterforArabicCulture_29,'<img src="legend/CentralMassachussettsAgencyonAging_28.png" /> Central Massachussetts Agency on Aging': layer_CentralMassachussettsAgencyonAging_28,'<img src="legend/DEAFInc_27.png" /> DEAF Inc ': layer_DEAFInc_27,'<img src="legend/DisabilityPolicyConsortium_26.png" /> Disability Policy Consortium': layer_DisabilityPolicyConsortium_26,'<img src="legend/EnlacedeFamilias_25.png" /> Enlace de Familias ': layer_EnlacedeFamilias_25,'<img src="legend/EverettHaitianCommunityCenter_24.png" /> Everett Haitian Community Center': layer_EverettHaitianCommunityCenter_24,'<img src="legend/FamilyServicesofMerrimackValley_23.png" /> Family Services of Merrimack Valley ': layer_FamilyServicesofMerrimackValley_23,'<img src="legend/FamilyTIESofMA_22.png" /> Family TIES of MA': layer_FamilyTIESofMA_22,'<img src="legend/FatherBillsMainSpring_21.png" /> Father Bill\'s & MainSpring': layer_FatherBillsMainSpring_21,'<img src="legend/FederationforChildrenwithSpecialNeeds_20.png" /> Federation for Children with Special Needs': layer_FederationforChildrenwithSpecialNeeds_20,'<img src="legend/ImmigrantsAssistanceCenterInc_19.png" /> Immigrants Assistance Center, Inc.': layer_ImmigrantsAssistanceCenterInc_19,'<img src="legend/IslamicSocietyofBostonISBCC_18.png" /> Islamic Society of Boston (ISBCC)': layer_IslamicSocietyofBostonISBCC_18,'<img src="legend/JusticeResourceInstitute_17.png" /> Justice Resource Institute': layer_JusticeResourceInstitute_17,'<img src="legend/LaColaborativa_16.png" /> La Colaborativa': layer_LaColaborativa_16,'<img src="legend/LatinoPublicInstitute_15.png" /> Latino Public Institute': layer_LatinoPublicInstitute_15,'<img src="legend/LGBTAsylumTaskForce_14.png" /> LGBT Asylum Task Force': layer_LGBTAsylumTaskForce_14,'<img src="legend/LifePath_13.png" /> LifePath': layer_LifePath_13,'<img src="legend/MassachusettsAllianceofPortugueseSpeakers_12.png" /> Massachusetts Alliance of Portuguese Speakers': layer_MassachusettsAllianceofPortugueseSpeakers_12,'<img src="legend/MulticulturalAIDsCoalition_11.png" /> Multicultural AIDs Coalition': layer_MulticulturalAIDsCoalition_11,'<img src="legend/NewAmericanAssociationofMassachusetts_10.png" /> New American Association of Massachusetts': layer_NewAmericanAssociationofMassachusetts_10,'<img src="legend/OuterCapeHealthServices_9.png" /> Outer Cape Health Services': layer_OuterCapeHealthServices_9,'<img src="legend/QARI_8.png" /> QARI': layer_QARI_8,'<img src="legend/SomaliParentsAdvocacyCenterforEducation_7.png" /> Somali Parents Advocacy Center for Education': layer_SomaliParentsAdvocacyCenterforEducation_7,'<img src="legend/TapestryHealth_6.png" /> Tapestry Health': layer_TapestryHealth_6,'<img src="legend/TransformationalPrisonProject_5.png" /> Transformational Prison Project': layer_TransformationalPrisonProject_5,'<img src="legend/VietAID_4.png" /> VietAID': layer_VietAID_4,'<img src="legend/VolunteersinMedicine_3.png" /> Volunteers in Medicine': layer_VolunteersinMedicine_3,'<img src="legend/MAOutline_2.png" /> MA Outline ': layer_MAOutline_2,'<img src="legend/MAMunicipalitiesOutline_1.png" /> MA Municipalities Outline ': layer_MAMunicipalitiesOutline_1,"Positron": layer_Positron_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/CommunitysofFocus_30.png" /> Community(s) of Focus': layer_CommunitysofFocus_30,'<img src="legend/Mass4HFoundation_29.png" /> Mass 4H Foundation': layer_Mass4HFoundation_29,'<img src="legend/JusticeResourceInstitute_28.png" /> Justice Resource Institute': layer_JusticeResourceInstitute_28,'<img src="legend/AuthenticCarribeanFoundation_27.png" /> Authentic Carribean Foundation': layer_AuthenticCarribeanFoundation_27,'<img src="legend/BostonChinatownNeighborhoodCenter_26.png" /> Boston Chinatown Neighborhood Center': layer_BostonChinatownNeighborhoodCenter_26,'<img src="legend/CenterforArabicCulture_25.png" /> Center for Arabic Culture ': layer_CenterforArabicCulture_25,'<img src="legend/LatinoPublicInstitute_24.png" /> Latino Public Institute': layer_LatinoPublicInstitute_24,'<img src="legend/IslamicSocietyofBostonISBCC_23.png" /> Islamic Society of Boston (ISBCC)': layer_IslamicSocietyofBostonISBCC_23,'<img src="legend/SomaliParentsAdvocacyCenterforEducation_22.png" /> Somali Parents Advocacy Center for Education': layer_SomaliParentsAdvocacyCenterforEducation_22,'<img src="legend/DEAFInc_21.png" /> DEAF Inc ': layer_DEAFInc_21,'<img src="legend/LifePath_20.png" /> LifePath': layer_LifePath_20,'<img src="legend/EnlacedeFamilias_19.png" /> Enlace de Familias ': layer_EnlacedeFamilias_19,'<img src="legend/FederationforChildrenwithSpecialNeeds_18.png" /> Federation for Children with Special Needs': layer_FederationforChildrenwithSpecialNeeds_18,'<img src="legend/EverettHaitianCommunityCenter_17.png" /> Everett Haitian Community Center': layer_EverettHaitianCommunityCenter_17,'<img src="legend/ImmigrantsAssistanceCenterInc_16.png" /> Immigrants Assistance Center, Inc.': layer_ImmigrantsAssistanceCenterInc_16,'<img src="legend/QARI_15.png" /> QARI': layer_QARI_15,'<img src="legend/VietAID_14.png" /> VietAID': layer_VietAID_14,'<img src="legend/VolunteersinMedicine_13.png" /> Volunteers in Medicine': layer_VolunteersinMedicine_13,'<img src="legend/FamilyServicesofMerrimackValley_12.png" /> Family Services of Merrimack Valley ': layer_FamilyServicesofMerrimackValley_12,'<img src="legend/OuterCapeHealthServices_11.png" /> Outer Cape Health Services': layer_OuterCapeHealthServices_11,'<img src="legend/FatherBillsMainSpring_10.png" /> Father Bill\'s & MainSpring': layer_FatherBillsMainSpring_10,'<img src="legend/TapestryHealth_9.png" /> Tapestry Health': layer_TapestryHealth_9,'<img src="legend/LaColaborativa_8.png" /> La Colaborativa': layer_LaColaborativa_8,'<img src="legend/NewAmericanAssociationofMassachusetts_7.png" /> New American Association of Massachusetts': layer_NewAmericanAssociationofMassachusetts_7,'<img src="legend/MulticulturalAIDsCoalition_6.png" /> Multicultural AIDs Coalition': layer_MulticulturalAIDsCoalition_6,'<img src="legend/CambodianMutualAssistanceAssociation_5.png" /> Cambodian Mutual Assistance Association ': layer_CambodianMutualAssistanceAssociation_5,'<img src="legend/CentralMassachussettsAgencyonAging_4.png" /> Central Massachussetts Agency on Aging': layer_CentralMassachussettsAgencyonAging_4,'<img src="legend/TransformationalPrisonProject_3.png" /> Transformational Prison Project': layer_TransformationalPrisonProject_3,'<img src="legend/MAOutline_2.png" /> MA Outline ': layer_MAOutline_2,'<img src="legend/MAMunicipalitiesOutline_1.png" /> MA Municipalities Outline ': layer_MAMunicipalitiesOutline_1,"Positron": layer_Positron_0,},{collapsed:false}).addTo(map);
         setBounds();
-        resetLabels([layer_Mass4HFoundation_33]);
+        resetLabels([layer_Mass4HFoundation_29]);
         map.on("zoomend", function(){
-            resetLabels([layer_Mass4HFoundation_33]);
+            resetLabels([layer_Mass4HFoundation_29]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_Mass4HFoundation_33]);
+            resetLabels([layer_Mass4HFoundation_29]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_Mass4HFoundation_33]);
+            resetLabels([layer_Mass4HFoundation_29]);
         });
         </script>
     </body>
